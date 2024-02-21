@@ -17,6 +17,7 @@ vim.keymap.set({ 'n', 'v' }, ':', ';')
 
 -- Change leader key from " to '
 vim.g.mapleader = "'"
+vim.g.maplocalleader = ","
 
 -- Buffer navigation
 vim.keymap.set('n', '<leader>n', vim.cmd.bnext)
