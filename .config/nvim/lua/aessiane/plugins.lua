@@ -177,7 +177,7 @@ local insert_lines_at_beginning = function(lines)
 	vim.api.nvim_buf_set_lines(0, 0, 0, false, lines)
 end
 
-local insert_generated_text = function(obj)
+local insert_generated_commit_information = function(obj)
 	vim.schedule(function()
 		local lines = {}
 		if obj.code ~= 0 then
@@ -186,6 +186,9 @@ local insert_generated_text = function(obj)
 			lines = { "No output from AI, please write your own commit message" }
 		else
 			lines = splitText(obj.stdout)
+
+			-- Add an empty line between the short description and the body
+			table.insert(lines, 2, "")
 		end
 
 		insert_lines_at_beginning(lines)
@@ -206,7 +209,7 @@ vim.g.committia_hooks = {
 			-- Run the shell companion to generate the commit message
 			local command = vim.system({ 'poetry', 'run', 'ai', 'git' },
 				{ text = true, cwd = '/Users/aessiane/1.Projects/shell-companion/shell-companion/', stdin = true },
-				insert_generated_text)
+				insert_generated_commit_information)
 			command:write(diff_buffer_content)
 			command:write(nil)
 		end
