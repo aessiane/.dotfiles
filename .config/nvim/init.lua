@@ -17,3 +17,10 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.updatetime = 300
 -- (coc.nvim) Always show the signcolumn, otherwise it would shift the text each time " diagnostics appear/become resolved
 vim.opt.signcolumn = 'yes'
+
+-- Configure tabs
+vim.opt.shiftwidth = 4
+vim.opt.smarttab = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 8
+vim.opt.softtabstop = 0
