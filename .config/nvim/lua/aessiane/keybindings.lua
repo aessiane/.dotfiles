@@ -26,7 +26,7 @@ vim.keymap.set('n', '<leader>d', vim.cmd.bdelete)
 
 -- Telescope
 -- TODO: If git repo, use git_files else find_files
-vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
+vim.keymap.set('n', '<leader>ff', '<cmd>Telescope git_files<cr>')
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
