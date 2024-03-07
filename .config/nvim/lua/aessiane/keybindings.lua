@@ -25,8 +25,18 @@ vim.keymap.set('n', '<leader>p', vim.cmd.bprevious)
 vim.keymap.set('n', '<leader>d', vim.cmd.bdelete)
 
 -- Telescope
--- TODO: If git repo, use git_files else find_files
-vim.keymap.set('n', '<leader>ff', '<cmd>Telescope git_files<cr>')
+
+local use_git_files_if_in_git_repo = function()
+    local output = vim.fn.system('git rev-parse --is-inside-work-tree') -- string
+    if string.sub(output, 0, 4) == "true" then
+        return vim.cmd('Telescope git_files')
+    else
+        return vim.cmd('Telescope find_files')
+    end
+end
+
+--vim.keymap.set('n', '<leader>ff', use_git_files_if_in_git_repo)
+vim.keymap.set('n', '<leader>ff', use_git_files_if_in_git_repo)
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
