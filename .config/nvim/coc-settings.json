@@ -1,0 +1,12 @@
+{
+  "sumneko-lua.enableNvimLuaDev": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "typescript",
+    "react",
+    "javascriptreact",
+    "typescriptreact",
+    "json",
+    "lua"
+  ]
+}
