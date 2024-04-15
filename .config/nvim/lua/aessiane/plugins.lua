@@ -19,7 +19,7 @@ Plug('github/copilot.vim', { branch = 'release' })
 
 --  Telescope & it's dependencies
 Plug('nvim-telescope/telescope.nvim')
-Plug('nvim-treesitter/nvim-treesitter')
+Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 
@@ -82,6 +82,9 @@ Plug('wesQ3/vim-windowswap')
 Plug('vim-pandoc/vim-pandoc')
 Plug('vim-pandoc/vim-pandoc-syntax')
 
+-- Undo tree
+Plug('mbbill/undotree')
+
 vim.call('plug#end')
 
 --
@@ -95,3 +98,4 @@ require('aessiane/plugins/copilot')
 require('aessiane/plugins/nvim-treesitter')
 require('aessiane/plugins/telescope')
 require('aessiane/plugins/vim-slime')
+require('aessiane/plugins/undotree')
