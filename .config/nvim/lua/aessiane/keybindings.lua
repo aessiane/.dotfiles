@@ -35,8 +35,25 @@ local use_git_files_if_in_git_repo = function()
     end
 end
 
---vim.keymap.set('n', '<leader>ff', use_git_files_if_in_git_repo)
 vim.keymap.set('n', '<leader>ff', use_git_files_if_in_git_repo)
+vim.keymap.set('n', '<C-p>', '<cmd>Telescope find_files<cr>')
 vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
 vim.keymap.set('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
+
+-- Open Ex mode
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- Allow to  move selected text
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Keep cursor where it was when joining lines
+vim.keymap.set("n", "J", "mzJ`z")
+
+-- Keep cursoer in the middle when searching
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
+
+-- GREAT! Allow paste without overwriting the clipboard
+vim.keymap.set("x", "<leader>p", "\"_dP")
