@@ -1,0 +1,32 @@
+[alias]
+        dlog = "!f() { GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f"
+	dshow = "!f() { git show --ext-diff $@; }; f"
+[init]
+	defaultBranch = main
+
+[diff]
+	tool = difftastic
+	external = difft
+
+[difftool]
+        prompt = false
+
+[difftool "difftastic"]
+        cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+        difftool = true
+[push]
+	autoSetupRemote = true
+[user]
+	name = Abel Essiane
+	email = essiane.abel@gmail.com
+[alias]
+    ref-branch = "!f() { \
+        git branch --remotes --points-at $1 | \
+            grep -ve '->' | \
+            sed -r 's!^ *[a-zA-Z_0-9]+/!!'; \
+    }; f"
+    ppush = "!f() { \
+        ppush.sh \"$@\"; \
+    }; f"
