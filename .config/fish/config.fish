@@ -28,7 +28,7 @@ if status is-interactive
     alias cat=bat
     alias find=fd
     alias diff=difft
-    alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+    alias dotfiles='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
     areDotfilesPushed
 end
 
