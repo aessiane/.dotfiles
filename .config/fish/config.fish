@@ -3,6 +3,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 set -gx PYENV_ROOT $HOME/.pyenv
 pyenv init - | source
 
+set -gx PATH $PYENV_ROOT/bin $PATH
 set -gx PATH $HOME/scripts $PATH
 
 
