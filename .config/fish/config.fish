@@ -33,7 +33,7 @@ end
 
 if status is-interactive
     alias tree='tree -C'
-    alias vim=nvim
+    alias vim='OPENAI_API_KEY=(cat /Users/abel/1.Projects/shell-companion/.env | sed "s/.*=//") nvim'
     alias grep=rg
     alias cat=bat
     alias find=fd

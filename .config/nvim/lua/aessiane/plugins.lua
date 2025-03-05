@@ -23,6 +23,17 @@ Plug('nvim-treesitter/nvim-treesitter', { ['do'] = ':TSUpdate' })
 Plug('nvim-lua/plenary.nvim')
 Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'make' })
 
+-- Avante and dependencies
+Plug('stevearc/dressing.nvim')
+Plug('MunifTanjim/nui.nvim')
+Plug('MeanderingProgrammer/render-markdown.nvim')
+
+Plug('echasnovski/mini.icons')
+Plug('HakonHarnes/img-clip.nvim')
+
+Plug('yetone/avante.nvim', { branch = 'main', ['do'] = 'make' })
+
+
 -- TODO: configure plugin
 Plug('easymotion/vim-easymotion')
 Plug('scrooloose/nerdcommenter')
@@ -78,10 +89,6 @@ Plug('leafgarland/typescript-vim')
 --  Windows swapping
 Plug('wesQ3/vim-windowswap')
 
---  Markdown pandoc highlighting
-Plug('vim-pandoc/vim-pandoc')
-Plug('vim-pandoc/vim-pandoc-syntax')
-
 -- TODOs
 Plug('folke/todo-comments.nvim')
 
@@ -110,3 +117,5 @@ require('aessiane/plugins/vim-slime')
 require('aessiane/plugins/undotree')
 require('aessiane/plugins/todo-comments')
 require('aessiane/plugins/vim-translator')
+require('aessiane/plugins/render-markdown')
+require('aessiane/plugins/avante')
