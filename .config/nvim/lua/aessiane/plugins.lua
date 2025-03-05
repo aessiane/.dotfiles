@@ -82,8 +82,17 @@ Plug('wesQ3/vim-windowswap')
 Plug('vim-pandoc/vim-pandoc')
 Plug('vim-pandoc/vim-pandoc-syntax')
 
+-- TODOs
+Plug('folke/todo-comments.nvim')
+
 -- Undo tree
 Plug('mbbill/undotree')
+
+-- Translation
+Plug('voldikss/vim-translator')
+
+-- Helm
+Plug('towolf/vim-helm')
 
 vim.call('plug#end')
 
@@ -99,3 +108,5 @@ require('aessiane/plugins/nvim-treesitter')
 require('aessiane/plugins/telescope')
 require('aessiane/plugins/vim-slime')
 require('aessiane/plugins/undotree')
+require('aessiane/plugins/todo-comments')
+require('aessiane/plugins/vim-translator')

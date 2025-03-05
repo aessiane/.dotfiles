@@ -50,7 +50,7 @@ vim.g.committia_hooks = {
 
 			-- Run the shell companion to generate the commit message
 			local command = vim.system({ 'poetry', 'run', 'ai', 'git' },
-				{ text = true, cwd = '/Users/aessiane/1.Projects/shell-companion/shell-companion/', stdin = true },
+				{ text = true, cwd = '/Users/abel/1.Projects/shell-companion/', stdin = true },
 				insert_generated_commit_information)
 			command:write(diff_buffer_content)
 			command:write(nil)

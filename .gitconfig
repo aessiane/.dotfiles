@@ -20,7 +20,8 @@
 	autoSetupRemote = true
 [user]
 	name = Abel Essiane
-	email = essiane.abel@gmail.com
+	email = abel@cohere.com
+	signingkey = /Users/abel/.ssh/signing_id_ed25519.pub
 [alias]
     ref-branch = "!f() { \
         git branch --remotes --points-at $1 | \
@@ -30,3 +31,17 @@
     ppush = "!f() { \
         ppush.sh \"$@\"; \
     }; f"
+[pull]
+	rebase = true
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[gpg]
+	format = ssh

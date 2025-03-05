@@ -57,3 +57,5 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- GREAT! Allow paste without overwriting the clipboard
 vim.keymap.set("x", "<leader>p", "\"_dP")
+
+vim.keymap.set({ "n", "v" }, "<leader>t", ":Translate <cr>")
