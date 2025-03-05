@@ -52,9 +52,9 @@ git branch $remote_branch HEAD
 git push origin "$remote_branch:$remote_branch"
 
 echo "> Creating PR"
-PR_URL=$(gh pr create --fill --base $base $reviewer --body "copilot:all" --head $remote_branch)
+PR_URL=$(gh pr create --fill --base $base $reviewer --head $remote_branch)
 echo $PR_URL
-gh pr merge $PR_URL --squash  --delete-branch
+gh pr merge $PR_URL --squash --auto --delete-branch
 
 # Ask user if they want to delete the local branch
 read -p "Delete local branch? " -n 1 -r
