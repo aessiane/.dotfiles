@@ -1,7 +1,9 @@
--- GENERAL CONFIUGRATION
-
--- Configure colorscheme
-vim.cmd('colorscheme tokyonight-night') -- Changed in 04/2024 from tokyonight-moon
+--  GENERAL SETTINGS TODO: put in a different file
+-- - Setting up `mapleader` and `maplocalleader` before
+--   loading lazy.nvim so that mappings are correct.
+-- - Setting up general settings
+vim.g.mapleader = "'"
+vim.g.maplocalleader = ","
 
 -- My sane defaults
 vim.opt.nu = true
